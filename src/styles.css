@@ -1,0 +1,94 @@
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/332/original/andrea-ferrario-3WgPZbsDSkE-unsplash.jpg?1682724156");
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  color: #5f5c90;
+  font-size: 48px;
+  margin: 20px 10px;
+  position: relative;
+}
+
+p {
+  font-size: 25px;
+  font-family: "handlee";
+}
+
+hr {
+  border: 2px solid #edd2cb;
+  margin: 10px auto;
+}
+.container {
+  border-radius: 20px;
+  border: 2px solid #edd2cb;
+  max-width: 50%;
+  min-width: min-content;
+  padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #fff;
+}
+
+.current-city {
+  font-family: "handlee";
+  font-size: 38px;
+  color: #5f5c90;
+}
+
+.current-temperature {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 48px;
+  margin: auto;
+}
+
+#current-city-button {
+  background: #5f5c90;
+  color: #fff;
+  border-radius: 20px;
+}
+
+#search-button {
+  background: #5f5c90;
+  color: #fff;
+  border-radius: 20px;
+}
+
+#search-form {
+  padding: 10px;
+  margin: 0px;
+}
+
+.today-temperature,
+.col-6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+#coder {
+  text-align: center;
+  font-size: 15px;
+  color: #ffadaa;
+  font-family: monospace;
+  margin-top: 10px;
+}
+
+#code-link,
+#host-link {
+  text-decoration: none;
+  color: #5f5c90;
+}
+
+#code-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ffadaa;
+}
+
+#host-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ffadaa;
+}
