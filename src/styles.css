@@ -29,6 +29,7 @@ hr {
   margin-right: auto;
   margin-left: auto;
   background: #fff;
+  opacity: 0.85;
 }
 
 .current-city {
