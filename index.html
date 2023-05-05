@@ -28,9 +28,11 @@
     <div class="container">
       <h1 class="header">Weather Forecast</h1>
       <br />
-<form class="search-form" id="search-form">
+
+
+      <form class="search-form" id="search-form">
         <div class="row">
-          <div class="col-4">
+          <div class="col-6 ">
             <input
               type="search"
               placeholder="Search City..."
@@ -38,16 +40,16 @@
               autocomplete="off"
               class="city-input" />
           </div>
-          <div class="col-3"> 
-            <input type="submit" value="Search" id="search-button" />
-          </div>
-          <div class="col-5">
-            <button id="current-city-button" value="Current City">
-              Current City
+          <div class="col-6"> 
+            <input type="submit" value="Search" id="search-button" /> <button id="current-city-button" value="Current City">
+               Current City 
             </button>
           </div>
         </div>
       </form>
+
+
+      
        <hr />
       <div class="row today">
         <div class="col-12">
@@ -64,10 +66,10 @@
       </div>
 
       <div class="row temp">
-        <div class="col-6">
+        <div class="col-8">
           <h2 class="current-temperature"></h2>
         </div>
-        <div class="col-6">
+        <div class="col-4" id="details">
           <p>
             Humidity: <span class="humidity">43%</span><br />Wind:
             <span class="wind-speed">5 km/h</span>
@@ -77,38 +79,50 @@
 
       <hr />
 
-      <div class="row tomorrow">
-        <div class="col-6">
-          <i class="fa-solid fa-cloud-sun icon"></i> Tomorrow
-        </div>
-        <div class="col-6">H: 74&degF | L: 51&degF</div>
+      <div class="row tomorrow future">
+        <div class="col-4" >
+          <i class="fa-solid fa-cloud-sun icon"></i> 
+        </div><div class="col-4">Tomorrow</div>
+        <div class="col-4" id="high-low">H: 74&degF | L: 51&degF</div>
       </div>
 
-      <div class="row sunday">
-        <div class="col-6">
-          <i class="fa-solid fa-cloud-sun-rain icon"></i> Sunday
-        </div>
-        <div class="col-6">H: 78&degF | L: 47&degF</div>
+      <div class="row sunday future">
+        <div class="col-4">
+          <i class="fa-solid fa-cloud-sun-rain icon"></i> 
+        </div><div class="col-4">Sunday</div>
+        <div class="col-4"id="high-low">H: 78&degF | L: 47&degF</div>
       </div>
 
-      <div class="row monday">
-        <div class="col-6">
-          <i class="fa-solid fa-cloud-sun-rain icon"></i> Monday
-        </div>
-        <div class="col-6">H: 70&degF | L: 52&degF</div>
+      <div class="row monday future">
+        <div class="col-4">
+          <i class="fa-solid fa-cloud-sun-rain icon"></i>
+        </div><div class="col-4">Monday</div>
+        <div class="col-4"id="high-low">H: 70&degF | L: 52&degF</div>
       </div>
 
-      <div class="row tuesday">
-        <div class="col-6">
-          <i class="fa-solid fa-cloud-showers-heavy icon"></i> Tuesday
+      <div class="row tuesday future">
+        <div class="col-4">
+          <i class="fa-solid fa-cloud-showers-heavy icon"></i> 
         </div>
-        <div class="col-6">H: 64&degF | L: 48&degF</div>
+        <div class="col-4">Tuesday</div>
+        <div class="col-4"id="high-low">H: 64&degF | L: 48&degF</div>
       </div>
 
-      <div class="row wednesday">
-        <div class="col-6"><i class="fa-solid fa-sun icon"></i> Wednesday</div>
-        <div class="col-6">H: 75&degF | L: 57&degF</div>
+      <div class="row wednesday future">
+        <div class="col-4"><i class="fa-solid fa-sun icon"></i></div><div class="col-4">Wednesday</div>
+        <div class="col-4"id="high-low">H: 75&degF | L: 57&degF</div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
       <br />
     </div>
     <p id="coder"><a href="https://github.com/lperry09/lp-weather-app" target="_blank" id="code-link">Open-Source Code on GitHub</a> and <a href="https://spontaneous-kataifi-5f345d.netlify.app/" target="_blank" id="host-link">Hosted on Netlify </a>by Laura T Perry </p>
