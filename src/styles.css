@@ -61,18 +61,11 @@ hr {
   margin: 0px;
 }
 
-.today-temperature,
-.future {
+.today-temperature {
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-top: 10px;
   font-size: 25px;
   text-align: left;
-}
-
-.icon {
-  font-size: 36px;
-  text-align: center;
-  margin-right: 20px;
 }
 
 #coder {
