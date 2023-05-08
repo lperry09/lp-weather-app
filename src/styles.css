@@ -28,6 +28,7 @@ hr {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
   background: #fff;
   opacity: 0.85;
 }
@@ -61,7 +62,7 @@ hr {
   margin: 0px;
 }
 
-.today-temperature {
+#future-forecast {
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-top: 10px;
   font-size: 25px;
@@ -71,7 +72,7 @@ hr {
 #coder {
   text-align: center;
   font-size: 15px;
-  color: #ffadaa;
+  color: #e2adb3;
   font-family: monospace;
   margin-top: 10px;
 }
@@ -79,17 +80,17 @@ hr {
 #code-link,
 #host-link {
   text-decoration: none;
-  color: #5f5c90;
+  color: #cab3c5;
 }
 
 #code-link:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #ffadaa;
+  color: #e2adb3;
 }
 
 #host-link:hover {
   cursor: pointer;
   text-decoration: underline;
-  color: #ffadaa;
+  color: #e2adb3;
 }
