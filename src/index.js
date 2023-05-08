@@ -32,15 +32,15 @@ dateElement.innerHTML = formatDate(currentTime);
 // Feature: Search/Current City
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
 
   let city = document.querySelector(".current-city");
-  city.innerHTML = `${response.data.name}`;
+  city.innerHTML = `${response.data.city}`;
 
   let h2 = document.querySelector(".current-temperature");
   h2.innerHTML = `${temperature}&degF`;
 
-  let humidityData = response.data.main.humidity;
+  let humidityData = response.data.temperature.humidity;
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `${humidityData}%`;
 
@@ -49,15 +49,18 @@ function showTemperature(response) {
   windSpeed.innerHTML = `${windSpeedData} km/h`;
 
   document.querySelector(".weather-description").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
+
+  document.querySelector(".current-icon").innerHTML =
+    response.data.condition.icon;
 }
 
 function citySearch(event) {
   event.preventDefault(showCurrentPosition);
 
-  let apiKey = "25dc8dab76c93d4db8db9e680160f3ab";
+  let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
   let city = document.querySelector(".city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showTemperature);
 
@@ -71,8 +74,8 @@ function showCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
 
-  let apiKey = "25dc8dab76c93d4db8db9e680160f3ab";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showTemperature);
 }
