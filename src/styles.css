@@ -45,6 +45,14 @@ hr {
   margin: auto;
 }
 
+#celsius-link,
+#fahrenheit-link {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  text-align: left;
+  text-decoration: none;
+}
+
 #current-city-button {
   background: #5f5c90;
   color: #fff;
