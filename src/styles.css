@@ -57,7 +57,7 @@ hr {
 #celsius-link:hover,
 #fahrenheit-link:hover {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   color: #e2adb3;
 }
 
