@@ -5,7 +5,7 @@ function showTemperature(response) {
   city.innerHTML = `${response.data.city}`;
 
   let h2 = document.querySelector(".current-temperature");
-  h2.innerHTML = `${temperature}&degF`;
+  h2.innerHTML = `${temperature}`;
 
   let humidityData = response.data.temperature.humidity;
   let humidity = document.querySelector(".humidity");
@@ -24,6 +24,8 @@ function showTemperature(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+
+  celsiusTemperature = response.data.temperature.current;
 }
 
 function citySearch(event) {
@@ -31,7 +33,7 @@ function citySearch(event) {
 
   let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
   let city = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemperature);
 
@@ -46,7 +48,7 @@ function showCurrentPosition(position) {
   let longitude = position.coords.longitude;
 
   let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemperature);
 }
@@ -59,3 +61,27 @@ function showGeoLocation(event) {
 }
 let currentLocate = document.querySelector("#current-city-button");
 currentLocate.addEventListener("click", showGeoLocation);
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector(".current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector(".current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+fahrenheitLink.addEventListener("click", showCelsiusTemperature);
