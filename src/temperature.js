@@ -1,3 +1,17 @@
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = `<div class="row">
+              <div class="col-2"> 
+                <div class="weather-forecast-date">Thursday <img src="" alt=""/>
+                </div>
+                  <div class="weather-forecast-temperature">
+                    <span class="weather-forecast-maximum">18&deg</span> | <span class="weather-forecast-minimum">12&deg</span>
+                  </div>
+              </div>    
+            </div>`;
+}
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
 
@@ -101,3 +115,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+displayForecast();
