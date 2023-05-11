@@ -23,7 +23,7 @@ hr {
 .container {
   border-radius: 20px;
   border: 2px solid #edd2cb;
-  max-width: 40%;
+  max-width: 50%;
   min-width: min-content;
   padding: 30px;
   margin-right: auto;
@@ -109,4 +109,16 @@ hr {
   cursor: pointer;
   text-decoration: underline;
   color: #e2adb3;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #3f3e41;
+}
+
+.weather-forecast-date,
+.weather-forecast-temperature {
+  font-size: 16px;
 }
