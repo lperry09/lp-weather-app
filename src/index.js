@@ -38,16 +38,7 @@ function displayForecast() {
     forecastHTML +
     `
               <div class="col-2"> 
-                <div class="weather-forecast-date">Thursday <img src="" alt=""/>
-                </div>
-                  <div class="weather-forecast-temperature">
-                    <span class="weather-forecast-maximum">18&deg</span> | <span class="weather-forecast-minimum">12&deg</span>
-                  </div>
-              </div>    
-            </div>
- 
-              <div class="col-2"> 
-                <div class="weather-forecast-date">Thursday <img src="" alt=""/>
+                <div class="weather-forecast-date">Thursday <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png" alt=""/>
                 </div>
                   <div class="weather-forecast-temperature">
                     <span class="weather-forecast-maximum">18&deg</span> | <span class="weather-forecast-minimum">12&deg</span>
