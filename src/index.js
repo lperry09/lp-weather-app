@@ -61,7 +61,7 @@ function displayForecast(response) {
           forecastDay.time
         )}<br/><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
           forecastDay.condition.icon
-        }.png" alt=""width"42"/>
+        }.png" alt=""width="42"/>
         </div>
         <div class="weather-forecast-temperature">
           <span class="weather-forecast-maximum">${Math.round(
@@ -114,8 +114,8 @@ function showTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 
-  celsiusTemperature = response.data.temperature.current;
-  fahrenheitTemperature = convertCelsiusToFahrenheit(celsiusTemperature);
+  //celsiusTemperature = response.data.temperature.current;
+  //fahrenheitTemperature = convertCelsiusToFahrenheit(celsiusTemperature);
 
   getForecast(response.data.coordinates);
 }
@@ -125,7 +125,7 @@ function citySearch(event) {
 
   let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
   let city = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showTemperature);
 
@@ -140,7 +140,7 @@ function showCurrentPosition(position) {
   let longitude = position.coords.longitude;
 
   let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showTemperature);
 }
@@ -154,43 +154,43 @@ function showGeoLocation(event) {
 let currentLocate = document.querySelector("#current-city-button");
 currentLocate.addEventListener("click", showGeoLocation);
 
-let celsiusTemperature = null;
+//let celsiusTemperature = null;
 
-function convertCelsiusToFahrenheit(celsius) {
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  return Math.round(fahrenheit);
-}
+//function convertCelsiusToFahrenheit(celsius) {
+//let fahrenheit = (celsius * 9) / 5 + 32;
+//return Math.round(fahrenheit);
+//}
 
-function convertFahrenheitToCelsius(fahrenheit) {
-  let celsius = ((fahrenheit - 32) * 5) / 9;
-  return Math.round(celsius);
-}
+//function convertFahrenheitToCelsius(fahrenheit) {
+//let celsius = ((fahrenheit - 32) * 5) / 9;
+//return Math.round(celsius);
+//}
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temperature");
-  let celsiusTemperature = convertFahrenheitToCelsius(fahrenheitTemperature);
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.add("active");
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.classList.remove("active");
-}
+//function displayCelsiusTemperature(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector(".current-temperature");
+//let celsiusTemperature = convertFahrenheitToCelsius(fahrenheitTemperature);
+//temperatureElement.innerHTML = Math.round(celsiusTemperature);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.classList.add("active");
+//let fahrenheitLink = document.querySelector("#fahrenheit-link");
+//fahrenheitLink.classList.remove("active");
+//}
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temperature");
-  temperatureElement.innerHTML = `${fahrenheitTemperature}`;
-  let celsiusLink = document.querySelector("#celsius-link");
-  celsiusLink.classList.remove("active");
-  let fahrenheitLink = document.querySelector("#fahrenheit-link");
-  fahrenheitLink.classList.add("active");
-}
+//function displayFahrenheitTemperature(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector(".current-temperature");
+//temperatureElement.innerHTML = `${fahrenheitTemperature}`;
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.classList.remove("active");
+//let fahrenheitLink = document.querySelector("#fahrenheit-link");
+//fahrenheitLink.classList.add("active");
+//}
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+//let fahrenheitLink = document.querySelector("#fahrenheit-link");
+//fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 displayForecast();
