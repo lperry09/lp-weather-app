@@ -31,7 +31,8 @@ dateElement.innerHTML = formatDate(currentTime);
 
 // Feature: Temperature
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -53,6 +54,15 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "bf43f3653d603cc4t8adcf005bodbea9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
@@ -84,6 +94,8 @@ function showTemperature(response) {
 
   celsiusTemperature = response.data.temperature.current;
   fahrenheitTemperature = convertCelsiusToFahrenheit(celsiusTemperature);
+
+  getForecast(response.data.coordinates);
 }
 
 function citySearch(event) {
