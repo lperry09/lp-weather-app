@@ -1,8 +1,13 @@
 // Feature: Display Current Date and Time
 function formatDate(date) {
   let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
+  let amOrPm = "AM";
+  if (hours >= 12) {
+    amOrPm = "PM";
+    hours -= 12;
+  }
+  if (hours === 0) {
+    hours = 12;
   }
 
   let minutes = date.getMinutes();
@@ -22,7 +27,7 @@ function formatDate(date) {
   ];
   let day = days[dayIndex];
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes} ${amOrPm}`;
 }
 
 let dateElement = document.querySelector("#date");
@@ -61,7 +66,7 @@ function displayForecast(response) {
           forecastDay.time
         )}<br/><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
           forecastDay.condition.icon
-        }.png" alt=""width="42"/>
+        }.png" alt="weather icon"/>
         </div>
         <div class="weather-forecast-temperature">
           <span class="weather-forecast-maximum">${Math.round(
